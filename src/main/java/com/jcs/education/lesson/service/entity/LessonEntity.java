@@ -22,8 +22,6 @@ public class LessonEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Integer id;
 
-    private Integer courseUnitId;
-
     @Column(name = "lesson_name")
     private String name;
 

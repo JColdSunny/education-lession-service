@@ -2,6 +2,7 @@ package com.jcs.education.lesson.service.service;
 
 import com.jcs.education.lesson.service.exception.RequestValidationException;
 import com.jcs.education.lesson.service.proto.v1.GetLessonsRequest;
+import org.springframework.util.CollectionUtils;
 
 public class LessonServiceValidator {
 
@@ -10,8 +11,8 @@ public class LessonServiceValidator {
     }
 
     static void validateGetLessonsRequest(GetLessonsRequest request) {
-        if (request.getCourseUnitId() == 0) {
-            throw new RequestValidationException("course_unit_id must be specified");
+        if (CollectionUtils.isEmpty(request.getLessonsIdsList())) {
+            throw new RequestValidationException("lessons_ids must be specified");
         }
     }
 }

@@ -22,7 +22,7 @@ public class LessonService {
     public GetLessonsResponse getCourseUnitLessons(GetLessonsRequest request) {
         LessonServiceValidator.validateGetLessonsRequest(request);
 
-        List<Lesson> lessons = lessonRepository.findAllByCourseUnitId(request.getCourseUnitId()).stream()
+        List<Lesson> lessons = lessonRepository.findAllById(request.getLessonsIdsList()).stream()
                 .map(lessonMapper::toGrpcLesson)
                 .toList();
 

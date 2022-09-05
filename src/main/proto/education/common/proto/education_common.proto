@@ -17,7 +17,6 @@ message Tag {
 }
 
 message CourseUnit {
-  int32 order = 1;
   repeated education.common.Lesson lessons = 2;
 }
 
